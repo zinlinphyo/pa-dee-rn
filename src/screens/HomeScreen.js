@@ -9,7 +9,7 @@ export default function HomeScreen() {
 
   const [counter, setCounter] = useState(0);
 
-  useEffect(() => { counter % 108 === 0 ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) : Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) }, [counter]);
+  useEffect(() => { counter % 108 === 0 ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) : counter % 10 === 0 ? Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success) : Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light) }, [counter]);
 
   const beadClickHandler = () => { setCounter(counter + 1); };
 
@@ -21,7 +21,7 @@ export default function HomeScreen() {
       <SafeAreaView style={{ flex: 1, paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ fontSize: 24, margin: 20 }}>သမ္မာသမ္ဗုဒ္ဓေါ သိဒ္ဓိ (၉ ပတ်)</Text>
         <Text style={{ fontSize: 36, margin: 20 }}>{counter}</Text>
-        <Text style={{ fontSize: 18 }}>108 x {(counter / 108).toFixed(0)}</Text>
+        <Text style={{ fontSize: 18 }}>108 x {parseInt(counter / 108)}</Text>
         <TouchableOpacity style={{ backgroundColor: 'gray', width: 200, height: 200, justifyContent: 'center', alignItems: 'center', borderRadius: 100, margin: 50 }} onPress={beadClickHandler}>
           <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
             {counter}
@@ -32,7 +32,7 @@ export default function HomeScreen() {
             Reset
           </Text>
         </TouchableOpacity>
-        <ScrollView style={{ flex: 1, width: '100%', height: 'auto', padding: 10 }}>
+        <ScrollView style={{ flex: 1, width: '100%', height: 'auto', paddingHorizontal: 10 }}>
           <Text>{description}</Text>
         </ScrollView>
       </SafeAreaView>
