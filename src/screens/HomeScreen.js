@@ -13,13 +13,13 @@ export default function HomeScreen() {
 
   const beadClickHandler = () => { setCounter(counter + 1); };
 
-  const description = "၂။ သမ္မာသမ္ဗုဒ္ဓေါ ဂုဏ်တော် \n တရားအလုံးစုံကို သဗ္ဗညုတဉာဏ်ဖြင့် အလိုလိုသိခြင်း၊ ဉာဏ်ပညာအကြီးဆုံးပုဂ္ဂိုလ်ဖြစ်တော်မူသော မြတ်စွာဘုရား။ \n (က) သမ္မာသမ္ဗုဒ္ဓေါ – သိစရာအားလုံးကို အမှန်အတိုင်း ကိုယ်ပိုင်ဉာဏ်ဖြင့် သိတော်မူသော မြတ်စွာဘုရား။ မဖေါက်မပြန် သယမ္ဘူဉာဏ်ဖြင့် ကိုယ်တော်တိုင်သာ အလုံးစုံသောတရားတို့ကို သိတော်မူပြီးသော မြတ်စွာဘုရား။ \n (ခ) သမ္မာသမ္ဗုဒ္ဓေါ – ကိုယ်တော်တိုင်သာလျှင် ဝါသနာနှင့်တကွ မောဟတည်းဟူသော အိပ်ပျော်ခြင်းမှ နိုးတော်မူပြီးသော မြတ်စွာဘုရား။ \n (ဂ) သမ္မာသမ္ဗုဒ္ဓေါ – အရဟတ္တမဂ်ဉာဏ်နှင့်ပေါင်းဖော်ရခြင်းကြောင့် သဗ္ဗညုတဉာဏ်သို့ရောက်သဖြင့် အသင့်အားဖြင့် ကိုယ်တော်တိုင်သာ ပွင့်တော်မူပြီးသော မြတ်စွာဘုရား။"
+  const description = "ဝိဇ္ဇာဉာဏ် ၃-ပါး(၈ပါး)၊ စရဏ အကျင့် ၁၅ ပါးတို့နှင့် ပြည့်စုံတော်မူခြင်း၊ အကြီးဆုံး ဝိဇ္ဇာနှင့် အကောင်းဆုံး အကျင့်ရှိသူဖြစ်တော်မူသော မြတ်စွာဘုရား။"
 
   return (
     <View style={styles.container}>
       <ExpoStatusBar style="auto" />
       <SafeAreaView style={{ flex: 1, paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: 24, margin: 20 }}>သမ္မာသမ္ဗုဒ္ဓေါ သိဒ္ဓိ (၉ ပတ်)</Text>
+        <Text style={{ fontSize: 24, margin: 20 }}>ဝိဇ္ဇာစရဏ သမ္ပန္နော သိဒ္ဓိ (၉ ပတ်)</Text>
         <Text style={{ fontSize: 36, margin: 20 }}>{counter}</Text>
         <Text style={{ fontSize: 18 }}>108 x {parseInt(counter / 108)}</Text>
         <TouchableOpacity style={{ backgroundColor: 'gray', width: 200, height: 200, justifyContent: 'center', alignItems: 'center', borderRadius: 100, margin: 50 }} onPress={beadClickHandler}>
@@ -32,7 +32,7 @@ export default function HomeScreen() {
             Reset
           </Text>
         </TouchableOpacity>
-        <ScrollView style={{ flex: 1, width: '100%', height: 'auto', paddingHorizontal: 10 }}>
+        <ScrollView style={{ flex: 1, width: '100%', height: 'auto', paddingTop: 10, paddingHorizontal: 10 }}>
           <Text>{description}</Text>
         </ScrollView>
       </SafeAreaView>
