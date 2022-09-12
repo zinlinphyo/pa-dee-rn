@@ -1,3 +1,1 @@
-const WarTwinData = {
-
-}
+const WarTwinData = {};
